@@ -10,6 +10,8 @@ import UIKit
 
 class Transformer: NSObject {
 
+    var name: String
+    
     var strength: Int
     var intelligence: Int
     var speed: Int
@@ -21,7 +23,9 @@ class Transformer: NSObject {
     var overallRating: Int
     
     
-    init(strength: Int, intelligence: Int, speed: Int, endurance: Int, courage: Int, firepower: Int, skill: Int) {
+    init(name: String, strength: Int, intelligence: Int, speed: Int, endurance: Int, courage: Int, firepower: Int, skill: Int) {
+        
+        self.name =  name
         
         self.strength = strength
         self.intelligence = intelligence
