@@ -17,6 +17,7 @@
 		CEAD95362023B9B600DB128E /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD95352023B9B600DB128E /* Transformer.swift */; };
 		CEAD95382023B9EF00DB128E /* Decepticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD95372023B9EF00DB128E /* Decepticon.swift */; };
 		CEAD953A2023BA0300DB128E /* Autobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD95392023BA0300DB128E /* Autobot.swift */; };
+		CEAD953C2023BE7E00DB128E /* Battle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD953B2023BE7E00DB128E /* Battle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		CEAD95352023B9B600DB128E /* Transformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transformer.swift; sourceTree = "<group>"; };
 		CEAD95372023B9EF00DB128E /* Decepticon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decepticon.swift; sourceTree = "<group>"; };
 		CEAD95392023BA0300DB128E /* Autobot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Autobot.swift; sourceTree = "<group>"; };
+		CEAD953B2023BE7E00DB128E /* Battle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				CEAD95092023B85E00DB128E /* ViewController.swift */,
 				CEAD95352023B9B600DB128E /* Transformer.swift */,
 				CEAD95372023B9EF00DB128E /* Decepticon.swift */,
+				CEAD953B2023BE7E00DB128E /* Battle.swift */,
 				CEAD95392023BA0300DB128E /* Autobot.swift */,
 				CEAD950B2023B85E00DB128E /* Main.storyboard */,
 				CEAD950E2023B85E00DB128E /* Assets.xcassets */,
@@ -273,6 +276,7 @@
 				CEAD95362023B9B600DB128E /* Transformer.swift in Sources */,
 				CEAD95082023B85E00DB128E /* AppDelegate.swift in Sources */,
 				CEAD953A2023BA0300DB128E /* Autobot.swift in Sources */,
+				CEAD953C2023BE7E00DB128E /* Battle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
