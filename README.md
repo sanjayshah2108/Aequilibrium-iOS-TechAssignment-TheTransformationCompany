@@ -60,4 +60,4 @@ Special   rules:
 
 # How To Test
 
-Simply run the iOD app on a simulator or device, and test away!
+Simply run the iOS app on a simulator or device, and test away!
