@@ -109,7 +109,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         attributesIntDict = convertArrayToDict(array: attributesStringArray)
         
       
-        guard (attributesIntDict.count == 7) else {
+        guard (attributesStringArray.count == 7) else {
             let alert = UIAlertController(title: "Whoops", message: "Transformer must have 8 attribute ratings separated by commas", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
             present(alert, animated: true, completion: nil)
