@@ -105,18 +105,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        //fix
-        guard (attributesTextField.text != "") else {
+        attributesStringArray = attributesTextField.text?.components(separatedBy: ",")
+        attributesIntDict = convertArrayToDict(array: attributesStringArray)
+        
+      
+        guard (attributesIntDict.count == 7) else {
             let alert = UIAlertController(title: "Whoops", message: "Transformer must have 8 attribute ratings separated by commas", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
             present(alert, animated: true, completion: nil)
             return
         }
-        
-        attributesStringArray = attributesTextField.text?.components(separatedBy: ",")
-        
-        convertArrayToDict(array: attributesStringArray)
-        
         
         
         if (typeTextField.text == "D") {
@@ -199,7 +197,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 }
                 
                 else if (battle.winner == nil){
+                    //do nothing, as no winners or survivors
+                }
                     
+                else if (battle.reasonForWin == "Game ends if Optimus Prime and Predaking battle"){
+                    
+                    winningTeamLabel.text = "Winning team: Draw!"
+                    
+                    losingTeamSurvivors.text = "All Transformers Destroyed!"
+                    
+                    return
                 }
                 
                 x += 1
