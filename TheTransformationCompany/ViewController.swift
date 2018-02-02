@@ -106,15 +106,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         
         attributesStringArray = attributesTextField.text?.components(separatedBy: ",")
-        attributesIntDict = convertArrayToDict(array: attributesStringArray)
         
-      
         guard (attributesStringArray.count == 7) else {
-            let alert = UIAlertController(title: "Whoops", message: "Transformer must have 8 attribute ratings separated by commas", preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: "Whoops", message: "Transformer must have 7 attribute ratings separated by commas", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
             present(alert, animated: true, completion: nil)
             return
         }
+        
+        attributesIntDict = convertArrayToDict(array: attributesStringArray)
         
         
         if (typeTextField.text == "D") {
