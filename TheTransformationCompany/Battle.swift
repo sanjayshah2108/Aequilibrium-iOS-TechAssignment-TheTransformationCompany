@@ -10,17 +10,17 @@ import UIKit
 
 class Battle: NSObject {
 
-    var autobot: Autobot
-    var decepticon: Decepticon
+    var autobot: Autobot!
+    var decepticon: Decepticon!
     
     var winner: Transformer?
     var reasonForWin: String?
     
-    init(inputAutobot: Autobot, inputDecepticon: Decepticon){
-        self.autobot = inputAutobot
-        self.decepticon = inputDecepticon
-        
-    }
+//    init(inputAutobot: Autobot, inputDecepticon: Decepticon){
+//        self.autobot = inputAutobot
+//        self.decepticon = inputDecepticon
+//
+//    }
     
     
     func fight(inputAutobot: Autobot, inputDecepticon: Decepticon){
