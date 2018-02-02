@@ -16,12 +16,6 @@ class Battle: NSObject {
     var winner: Transformer?
     var reasonForWin: String?
     
-//    init(inputAutobot: Autobot, inputDecepticon: Decepticon){
-//        self.autobot = inputAutobot
-//        self.decepticon = inputDecepticon
-//
-//    }
-    
     
     func fight(inputAutobot: Autobot, inputDecepticon: Decepticon){
         
@@ -51,7 +45,7 @@ class Battle: NSObject {
             reasonForWin = "\(inputDecepticon.name) is way stronger and more courageous, so \(inputAutobot.name) has run away"
         }
             
-            //skill rule
+        //skill rule
         else if ((inputAutobot.skill - inputDecepticon.skill) >= 3){
             winner = inputDecepticon
             reasonForWin = "\(inputAutobot.name) is way more skilled, so \(inputDecepticon.name) doesnt have a chance"
@@ -63,7 +57,7 @@ class Battle: NSObject {
         }
             
             
-            //overallRating Rule
+        //overallRating Rule
         else if (inputAutobot.overallRating > inputDecepticon.overallRating){
             winner = inputAutobot
             reasonForWin = "\(inputAutobot.name) has a better overall rating"
@@ -74,13 +68,10 @@ class Battle: NSObject {
             reasonForWin = "\(inputDecepticon.name) has a better overall rating"
         }
         
-            //tie
+        //tie
         else if (inputDecepticon.overallRating == inputAutobot.overallRating){
             winner = nil
             reasonForWin = "No winner, both were evenly matched, and so got destroyed"
         }
-        
     }
-    
-    
 }

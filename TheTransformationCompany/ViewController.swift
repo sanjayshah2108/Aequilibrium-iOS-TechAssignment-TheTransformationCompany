@@ -56,6 +56,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
         typeTextField.delegate = self
         attributesTextField.delegate = self
         
+        autobotsArray = []
+        decepticonsArray = []
+        autobotSurvivorsArray = []
+        decepticonSurvivorsArray = []
+        attributesStringArray = []
+        attributesIntDict = [:]
+  
+        setupUI()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func setupUI(){
         autobotsListView.layer.borderWidth = 2.0
         autobotsListView.layer.borderColor = UIColor.black.cgColor
         
@@ -69,35 +85,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
         addToWarButton.layer.borderColor = UIColor.blue.cgColor
         addToWarButton.layer.borderWidth = 2.0
         addToWarButton.layer.cornerRadius = 5.0
-        
-        autobotsArray = []
-        decepticonsArray = []
-        autobotSurvivorsArray = []
-        decepticonSurvivorsArray = []
-        attributesStringArray = []
-        attributesIntDict = [:]
-  
-       
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
     @IBAction func addToTheWar(_ sender: UIButton) {
         
         attributesStringArray = []
         attributesIntDict = [:]
         
+        //guards to ensure correct format for data entry
         guard (nameTextField.text != "") else {
             let alert = UIAlertController(title: "Whoops", message: "Transformer must have name", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
             present(alert, animated: true, completion: nil)
             return
         }
-        //**
+    
         guard (typeTextField.text == "D" || typeTextField.text == "A") else {
             let alert = UIAlertController(title: "Whoops", message: "Transformer must either be of type A or D", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
@@ -139,13 +141,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
             autobotsListView.addSubview(label)
         }
         
-        
+        //clear textFields
         nameTextField.text = ""
         typeTextField.text = ""
         attributesTextField.text = ""
-        
-        
-        
     }
     
     func convertArrayToDict(array: [String]) -> [String: Int] {
@@ -182,7 +181,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             if(x < sortedDecepticonsArray.count){
             
-                
                 battle.fight(inputAutobot: autobot as! Autobot, inputDecepticon: sortedDecepticonsArray[x] as! Decepticon)
                 
                 noOfBattles = noOfBattles + 1
@@ -203,12 +201,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 else if (battle.reasonForWin == "Game ends if Optimus Prime and Predaking battle"){
                     
                     winningTeamLabel.text = "Winning team: Draw!"
-                    
                     losingTeamSurvivors.text = "All Transformers Destroyed!"
                     
                     return
                 }
-                
                 x += 1
             }
             
@@ -223,8 +219,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 
                 x += 1
             }
-            
-            
         }
         
         noOfBattlesLabel.text = String(noOfBattles) + " battle(s)"
@@ -282,8 +276,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return array.sorted(by: { $0.overallRating > $1.overallRating })
     }
     
-    
-    
+
+    //textField methods
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
         tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard(_:)))
@@ -295,8 +289,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if (tapGesture != nil){
             self.view.removeGestureRecognizer(tapGesture)
         }
-        
-        
     }
     
     @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
